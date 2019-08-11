@@ -1,5 +1,7 @@
 package _05_Enum_Stuff;
 
+import java.util.Iterator;
+
 import javax.swing.JOptionPane;
 
 public class _00_Horoscope {
@@ -10,5 +12,20 @@ public class _00_Horoscope {
 	//    a different horoscope based on the Zodiac's state.
 	
 	// 3. Make a main method to test your method
+	public static void main(String[] args) {
+        for( Zodiac z : Zodiac.values() ) {
+            getHoroscope( z );
+        }
+    }
 	
+	public static void getHoroscope( Zodiac z ) {
+	    switch(z) {
+	    case LIBRA:
+	        System.out.println( "You're a libra!" );
+	        break;
+	    default:
+	        System.out.println( "Some random horoscope" );
+	        break;
+	    }
+	}
 }
